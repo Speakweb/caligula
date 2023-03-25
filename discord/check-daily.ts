@@ -1,3 +1,4 @@
+import { exec } from 'child_process';
 import { PersistentStorage } from './storage'; // import PersistentStorage for storing URLs
 
 const storage = new PersistentStorage();
@@ -19,3 +20,26 @@ setInterval(() => checkRecord(() => {
     //callback function
     console.log("Executing callback function")
 }), 60 * 1000); // run the function every minute
+
+
+
+
+//setInterval(func, delay, arg0, arg1,  … , argN)
+
+setInterval(() => {
+  
+  // Check if time of day is the desired time of day (down to a minute)
+
+  // Time of day to execute
+  
+  // Time at setInterval callback 
+
+  let now: Date = new Date
+
+  let execute: String = "12:00"
+
+  if( now.getHours() >= Number(execute.split(":")[0]) && now.getMinutes() >= Number(execute.split(":")[1]) ){
+    console.log(now.getMinutes())
+  }
+
+}, 59 * 1000)
